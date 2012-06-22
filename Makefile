@@ -17,8 +17,8 @@ install: yaml.so
 uninstall:
 	$(RM) $(DESTDIR)$(LIBDIR)/yaml.so
 
-check: test.lua
-	@lua $<
+check: yaml.so test.lua
+	@lua test.lua
 
 clean:
 	$(RM) *.o yaml.so
