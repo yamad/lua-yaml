@@ -17,8 +17,11 @@ install: yaml.so
 uninstall:
 	$(RM) $(DESTDIR)$(LIBDIR)/yaml.so
 
+check: test.lua
+	@lua $<
+
 clean:
 	$(RM) *.o yaml.so
 
 
-.PHONY: install uninstall clean
+.PHONY: install uninstall check clean

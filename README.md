@@ -22,6 +22,13 @@ global `yaml` table.
     serialized = yaml.dump{1, 2, 3, 4}
     content = yaml.load(serialized)
 
+Todo
+----
+
+* Make compatible with Lua 5.2
+* Allow creating dump/load objects with internal configuration settings
+* Better error checking when using LibYAML dump functions
+
 History
 -------
 
