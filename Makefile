@@ -18,7 +18,8 @@ install: yaml.so
 uninstall:
 	$(RM) $(DESTDIR)$(LIBDIR)/yaml.so
 
-rockspec: yaml-$(VERSION)-1.rockspec
+rock: yaml-$(VERSION)-1.rockspec
+	luarocks pack $<
 
 yaml-%-1.rockspec: rockspec.in
 	sed 's/%VERSION%/$*/g' $< > $@
@@ -27,7 +28,7 @@ check: yaml.so test.lua
 	@lua test.lua
 
 clean:
-	$(RM) *.o *.rockspec yaml.so
+	$(RM) *.o *.rock *.rockspec yaml.so
 
 
-.PHONY: install uninstall rockspec check clean
+.PHONY: install uninstall rock check clean
