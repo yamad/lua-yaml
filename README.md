@@ -31,11 +31,17 @@ Todo
 History
 -------
 
+#### v0.3.1 - June 22 2012
+
+* Added rockspec
+* Added basic tests
+* Improved README
+
 #### v0.3 - June 01 2012
 
-* Remove bundled copy of LibYAML
-* Fix Makefile to link against system copy of LibYAML and support `DESTDIR`
-* Clean up README and reformat as Markdown
+* Removed bundled copy of LibYAML
+* Fixed Makefile to link against system copy of LibYAML and support `DESTDIR`
+* Cleaned up README and reformated as Markdown
 
 #### v0.2 - November 23 2009
 
@@ -83,6 +89,7 @@ Thanks to the following people for suggestions and patches:
 * Peter Mawhorter
 * Cyril Romain
 * Adrian Sampson
+* Stepan Bakshaev
 
 Portions of this software were inspired by Ingy döt Net's [YAML::LibYAML].
 
