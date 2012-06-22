@@ -1,10 +1,6 @@
 lua-yaml
 ========
-
 Lua [YAML] serialization using [LibYAML].
-
-[YAML]: http://yaml.org/
-[LibYAML]: http://pyyaml.org/wiki/LibYAML
 
 Installation
 ------------
@@ -21,6 +17,9 @@ global `yaml` table.
 
     serialized = yaml.dump{1, 2, 3, 4}
     content = yaml.load(serialized)
+
+Note that lua-yaml only supports YAML 1.1 (not 1.2). This is a limitation of
+the underlying [LibYAML] library rather than lua-yaml itself.
 
 Todo
 ----
@@ -52,7 +51,7 @@ History
 
 * Initial release
 
-License
+[License]
 -------
 
 Copyright (c) 2012, Craig Barnes.
@@ -85,5 +84,9 @@ Thanks to the following people for suggestions and patches:
 * Cyril Romain
 * Adrian Sampson
 
-Portions of this software were inspired by Ingy döt Net's
-[YAML::LibYAML](http://search.cpan.org/~nuffin/YAML-LibYAML) Perl module.
+Portions of this software were inspired by Ingy döt Net's [YAML::LibYAML].
+
+[YAML]:          http://yaml.org/ "YAML Ain't Markup Language"
+[LibYAML]:       http://pyyaml.org/wiki/LibYAML "YAML library written in C"
+[License]:       http://en.wikipedia.org/wiki/MIT_License "MIT license"
+[YAML::LibYAML]: http://search.cpan.org/~nuffin/YAML-LibYAML "YAML Perl Module"
