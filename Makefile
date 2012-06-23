@@ -12,7 +12,7 @@ install: yaml.so
 	install -Dpm0755 $< $(DESTDIR)$(LIBDIR)/$<
 
 uninstall:
-	$(RM) $(DESTDIR)$(LIBDIR)/yaml.so
+	rm -f $(DESTDIR)$(LIBDIR)/yaml.so
 
 dist: lua-yaml-$(VERSION).tar.gz
 
@@ -32,7 +32,7 @@ check: yaml.so test.lua
 	@lua test.lua
 
 clean:
-	$(RM) yaml.so *.o *.tar.gz *.rock *.rockspec
+	rm -f yaml.so *.o *.tar.gz *.rock *.rockspec
 
 
 .PHONY: install uninstall dist rock check clean
