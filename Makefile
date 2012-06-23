@@ -14,6 +14,14 @@ install: yaml.so
 uninstall:
 	$(RM) $(DESTDIR)$(LIBDIR)/yaml.so
 
+dist: lua-yaml-$(VERSION).tar.gz
+
+%.tar.gz: lyaml.c b64.c b64.h Makefile README.md test.lua | clean
+	mkdir $*
+	cp -r $^ $*
+	tar -czf $@ $*
+	rm -rf $*
+
 rock: yaml-$(VERSION)-1.rockspec
 	luarocks pack $<
 
@@ -24,7 +32,7 @@ check: yaml.so test.lua
 	@lua test.lua
 
 clean:
-	$(RM) *.o *.rock *.rockspec yaml.so
+	$(RM) yaml.so *.o *.tar.gz *.rock *.rockspec
 
 
-.PHONY: install uninstall rock check clean
+.PHONY: install uninstall dist rock check clean
